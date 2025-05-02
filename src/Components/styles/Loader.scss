@@ -1,0 +1,69 @@
+
+.LoadingContainer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e4e2dd;
+
+  &.firstImpression {
+
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    transition: all ease-in-out 0.3s;
+  }
+
+
+  &.stroke-path {
+    svg {
+      stroke: #dbbf94;
+      stroke-width: 3;
+      fill: #000;
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      animation: drawStroke 3s ease-in-out infinite;
+    }
+  }
+
+  &.fill-shape {
+    svg {
+      stroke: #dbbf94;
+      fill: #000;
+      animation: fadeInFill 2s ease-in-out forwards;
+    }
+  }
+
+  @keyframes drawStroke {
+    0% {
+      stroke-dashoffset: 300;
+    }
+
+    50% {
+      stroke-dashoffset: 0;
+    }
+
+    100% {
+      stroke-dashoffset: 300;
+    }
+  }
+
+  @keyframes fadeInFill {
+    0% {
+      fill: rgba(219, 191, 148, 0);
+    }
+
+    100% {
+      fill: rgba(219, 191, 148, 0.9);
+      background-color: #25313b;
+    }
+
+  }
+
+}
